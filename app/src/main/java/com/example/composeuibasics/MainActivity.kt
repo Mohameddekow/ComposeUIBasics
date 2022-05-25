@@ -6,10 +6,10 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
-import androidx.compose.runtime.Composable
+import androidx.compose.material.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.Email
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
@@ -27,15 +27,18 @@ class MainActivity : ComponentActivity() {
         setContent {
             ComposeUIBasicsTheme {
                 // A surface container using the 'background' color from the theme
-                 Column(
+
+                androidx.compose.material.Surface(color = MaterialTheme.colors.background) {
+                    Column(
                         modifier = Modifier
-                            .padding(24.dp)
-                            .fillMaxWidth()
-                            .background(MaterialTheme.colors.primary),
-                        horizontalAlignment = Alignment.CenterHorizontally
+                            .padding(4.dp)
+                            .fillMaxWidth(),
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        verticalArrangement = Arrangement.Center
                     ) {
-                        ExpandableCard()
+                        TextFieldExample1()
                     }
+                }
 
             }
         }
@@ -49,6 +52,7 @@ fun DefaultPreview() {
     ComposeUIBasicsTheme {
         Column {
             ExpandableCard()
+
         }
     }
 }
